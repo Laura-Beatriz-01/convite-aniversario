@@ -12,10 +12,25 @@ html, body {
     width: 100%;
     font-family: 'Poppins', 'Inter', 'Quicksand', Arial, sans-serif;
     background-color: #f6fcfe;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100vw;
     background-image: url(../assets/img/1.png);
-    
-    background-size: contain;
+    background-size: auto 100%;      /* Altura máxima da div, largura automática */
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Otimização para celulares */
+@media (max-width: 600px) {
+    .container {
+        background-size: 100% 100%;  /* Preenche largura e altura em telas pequenas */
+    }
 }
 
