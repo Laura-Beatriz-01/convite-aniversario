@@ -1,23 +1,8 @@
-import React from 'react';
+// não estou usando react, apenas javascript puro
+// então não é necessário importar react
+// a tela deve ser criada com javascript puro, sem bibliotecas ou frameworks
+//aqui deve ser criada a primeira tela
 
-const InvitationCard = ({ greeting, birthdayPerson, age, date, time, location }) => {
-    return (
-        <div className="invitation-card">
-            <h1>{greeting}</h1>
-            <h2>{birthdayPerson} está fazendo {age} anos!</h2>
-            <p>Data: {date}</p>
-            <p>Horário: {time}</p>
-            <p>Local: {location}</p>
-            <div className="buttons">
-                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`} target="_blank" rel="noopener noreferrer">
-                    <button>Ver no Google Maps</button>
-                </a>
-                <a href={`https://wa.me/?text=Estou%20indo%20para%20a%20festa%20do%20${birthdayPerson}!`} target="_blank" rel="noopener noreferrer">
-                    <button>Enviar pelo WhatsApp</button>
-                </a>
-            </div>
-        </div>
-    );
-};
 
-export default InvitationCard;
+
+// a tela deve ter um texto com o nome da aniversáriante Laura beatriz
