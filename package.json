@@ -1,0 +1,32 @@
+{
+  "name": "landing-page-festa-infantil",
+  "version": "1.0.0",
+  "description": "Landing page interativa e responsiva para convidar pessoas para uma festa infantil.",
+  "main": "src/scripts/main.js",
+  "scripts": {
+    "start": "live-server public",
+    "build": "echo 'Build process not defined yet.'",
+    "test": "echo 'No tests specified.'"
+  },
+  "keywords": [
+    "landing",
+    "page",
+    "festa",
+    "infantil",
+    "convite"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/seuusuario/landing-page-festa-infantil",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seuusuario/landing-page-festa-infantil.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seuusuario/landing-page-festa-infantil/issues"
+  }
+}
