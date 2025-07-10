@@ -4,4 +4,4 @@
 
 
 // Renderiza o background antes de qualquer outra coisa
-import '../components/telaDeFundo.js';
+//import '../components/telaDeFundo.js';
