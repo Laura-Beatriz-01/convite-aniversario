@@ -7,33 +7,79 @@
     box-sizing: border-box;
 }
 
+:root {
+    --container-width: 480px;
+    --container-height: 900px;
+    --container-padding-mobile: 5% 5% 35% 5%;
+    --container-padding-tablet: 2rem;
+    --container-padding-desktop: 3rem;
+    --font-family: 'Poppins', 'Inter', 'Quicksand', Arial, sans-serif;
+    --font-size-mobile: 0.9rem;
+    --font-size-tablet: 1rem;
+    --font-size-desktop: 1.1rem;
+    --h1-size-mobile: 1.5rem;
+    --h1-size-tablet: 2rem;
+    --h1-size-desktop: 2.5rem;
+    --background-color: #18171700;
+    --background-image: url('/img/backgroud_img.png');
+}
+
 html, body {
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     font-family: 'Poppins', 'Inter', 'Quicksand', Arial, sans-serif;
+    background: var(--background-color);
+    box-sizing: border-box;
 }
 
 .container {
+    position: relative;
     min-height: 100vh;
-    width: 100vw;
-    /*background-image: url(/img/1.png);  Imagem de fundo 
-    background-size: auto 100%;      
+    min-width: 100vw;
+    /* width: 100%; */ /* Removed for fixed width on larger screens */
+    /* height: 100%; */
+    max-width: var(--container-width);
+    max-height: var(--container-height);
+    margin: auto;
+    box-sizing: border-box;
+    background-image: var(--background-image);
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;*/
+    justify-content: center;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 1rem;
+/* slide das borboletas */
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+    max-width: var(--container-width);
+    max-height: var(--container-height);
+}
+.slide-overlay img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: var(--container-width);
+    max-height: var(--container-height);
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slide-overlay img.active {
+    opacity: 1;
 }
 
-.background-slideshow {
+/* .background-slideshow {
     position: fixed;
     top: 0; left: 0;
     width: 100vw;
@@ -54,12 +100,72 @@ h1 {
 
 .background-slideshow img.active {
     opacity: 1;
-}
+} */
 
 /* Otimização para celulares */
-@media (max-width: 600px) {
+
+/* Breakpoint: celulares menores */
+@media (max-width: 480px) and (max-height: 900px) {
     .container {
-        background-size: 100% 100%;  /* Preenche largura e altura em telas pequenas */
+        padding: var(--container-padding-mobile);
+        font-size: var(--font-size-mobile);
+    }
+    h1 {
+        font-size: var(--h1-size-mobile);
+    }
+}
+
+/* Breakpoint: celulares maiores */
+@media (min-width: 481px) and (max-width: 900px) {
+    .container {
+        padding: var(--container-padding-tablet);
+        font-size: var(--font-size-tablet);
+    }
+    h1 {
+        font-size: var(--h1-size-tablet);
+    }
+}
+
+/* Breakpoint: computador */
+@media (min-width: 901px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .container {
+        padding: var(--container-padding-desktop);
+        font-size: var(--font-size-desktop);
+        width: var(--container-width);
+        height: var(--container-height);
+        max-width: var(--container-width);
+        max-height: var(--container-height);
+        margin: auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+       /* .slide-overlay {
+        max-width: var(--container-width);
+        max-height: var(--container-height);
+        width: var(--container-width);
+        height: var(--container-height);
+        left: 0;
+        top: 0;
+    }
+    .slide-overlay img {
+        max-width: var(--container-width);
+        max-height: var(--container-height);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    } */
+
+    h1 {
+        font-size: var(--h1-size-desktop);
     }
 }
 
