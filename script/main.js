@@ -48,11 +48,11 @@ setInterval(() => {
     imgs.forEach((img) => img.classList.remove('active'));
     textoIdx++;
     if (textoIdx >= textos.length) {
-        window.location.href = '/pagina_confirmacao.html'; // Troque pelo endereço desejado
+        window.location.href = '/convite-aniversario/pagina_confirmacao.html'; // Troque pelo endereço desejado
         return;
     }
     imgs[textoIdx].classList.add('active');
-}, 6000); // Troca a cada 6 segundos
+}, 8000); // Troca a cada 6 segundos
 
 
 });
