@@ -34,8 +34,6 @@ html, body {
 
 .container {
     position: relative;
-    min-height: 100vh;
-    min-width: 100vw;
     /* width: 100%; */ /* Removed for fixed width on larger screens */
     /* height: 100%; */
     max-width: var(--container-width);
