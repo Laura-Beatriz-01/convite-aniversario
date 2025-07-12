@@ -43,8 +43,8 @@ html, body {
 
 .container {
     position: relative;
-    width: var(--container-width);
-    height: var(--container-height);
+    width: 100vw;
+    height: 100dvh;
     margin: auto;
     box-sizing: border-box;
     background-image: var(--background-image);
@@ -66,6 +66,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 3;
 }
 
 .texto img {
@@ -87,11 +88,6 @@ html, body {
     opacity: 1;
 }
 
-.texto {
-    z-index: 3;
-    position: relative;
-}
-
 /* slide das borboletas */
 .slide-overlay {
     position: absolute;
@@ -109,8 +105,8 @@ html, body {
     position: absolute;
     width: 100%;
     height: 100%;
-    max-width: var(--container-width);
-    max-height: var(--container-height);
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -118,11 +114,6 @@ html, body {
 .slide-overlay img.active {
     opacity: 1;
 }
-
-.slide-overlay {
-    z-index: 2;
-}
-
 
 /* Otimização para celulares */
 
@@ -141,7 +132,24 @@ html, body {
 
 /* Breakpoint: computador */
 @media (min-width: 901px) {
-    body {
+
+        .slide-overlay {
+        max-width: var(--container-width);
+        max-height: var(--container-height);
+        width: var(--container-width);
+        height: var(--container-height);
+        left: 0;
+        top: 0;
+    }
+    .slide-overlay img {
+        max-width: var(--container-width);
+        max-height: var(--container-height);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* body {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -176,7 +184,7 @@ html, body {
         width: 100%;
         height: 100%;
         object-fit: cover;
-    }
+    } */
 
     h1 {
         font-size: var(--h1-size-desktop);
