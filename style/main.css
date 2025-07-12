@@ -29,6 +29,7 @@
     --h1-size-desktop: 2.5rem;
     --background-color: #18171700;
     --background-image: url('/img/backgroud_img.png');
+    --veryberry-color: #ec6583;
 }
 
 html, body {
@@ -47,7 +48,7 @@ html, body {
     height: 100dvh;
     margin: auto;
     box-sizing: border-box;
-    /* background-image: var(--background-image); */
+    background-image: var(--background-image);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -115,7 +116,133 @@ html, body {
     opacity: 1;
 }
 
+
+/* estilos para a pagina de confirmação */
+
+.informacoes-evento {
+    width: 90vw;
+    max-width: 500px;
+    height: 90vw;
+    max-height: 500px;
+    background: transparent;
+    border-radius: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.informacoes-evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* Espaço vertical igual entre todos os itens */
+    padding: 2rem;
+}
+
+.container .informacoes-evento h2{
+    font-family: 'veryberry', cursive;
+    font-size: var(--font-size-mobile);
+    color: var(--veryberry-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.data-evento {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* espaço entre os itens */
+}
+
+.texto-mes {
+    border-top: 2px solid var(--veryberry-color);
+    border-bottom: 2px solid var(--veryberry-color);
+    padding: 0.2rem 0;
+}
+
+
+.texto-hora {
+    border-top: 2px solid var(--veryberry-color);
+    border-bottom: 2px solid var(--veryberry-color);
+    padding: 0.2rem 0;
+}
+
+.texto-data{
+    padding: 0;
+    color: #fff !important;
+    background-color: var(--veryberry-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.texto-endereco {
+    padding: 0,5rem 1rem;
+}
+
+.atalhos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 0; /* espaço entre os atalhos */
+    margin: 1rem;
+}
+
+.atalhos > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.atalhos img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.atalhos h3 {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--veryberry-color);
+}
+
+
 /* Otimização para celulares */
+
+/* Breakpoint: celulares maiores */
+@media (max-width: 481px) {
+    .container {
+        padding: var(--container-padding-tablet);
+        width: 100%;
+        height: 100%;
+        font-size: var(--font-size-tablet);
+    }
+
+     .informacoes-evento {
+        width: 100%;
+        height: 100%;
+        /* max-width: 500px; */
+        /* max-height: 500px; */
+    }
+
+    h1 {
+        font-size: var(--h1-size-tablet);
+    }
+}
 
 /* Breakpoint: celulares maiores */
 @media (min-width: 481px) {
@@ -125,6 +252,14 @@ html, body {
         height: 100%;
         font-size: var(--font-size-tablet);
     }
+
+     .informacoes-evento {
+        width: 300px;
+        height: 400px;
+        max-width: 500px;
+        max-height: 500px;
+    }
+
     h1 {
         font-size: var(--h1-size-tablet);
     }
@@ -147,6 +282,13 @@ html, body {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+     .informacoes-evento {
+        width: 500px;
+        height: 500px;
+        max-width: 500px;
+        max-height: 500px;
     }
 
     /* body {

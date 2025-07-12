@@ -46,18 +46,13 @@ let textoIdx = 0;
 setInterval(() => {
     const imgs = textoSlideshow.querySelectorAll('img');
     imgs.forEach((img) => img.classList.remove('active'));
-    textoIdx = (textoIdx + 1) % textos.length;
-    imgs[textoIdx].classList.add('active');
-}, 6000); // Troca a cada 5 segundos
-
-function setContainerBackground(imgPath) {
-    const container = document.querySelector('.container');
-    if (container) {
-        container.style.backgroundImage = `url('${imgPath}')`;
+    textoIdx++;
+    if (textoIdx >= textos.length) {
+        window.location.href = '/statics/pagina_confirmacao.html'; // Troque pelo endereço desejado
+        return;
     }
-}
+    imgs[textoIdx].classList.add('active');
+}, 6000); // Troca a cada 6 segundos
 
-// Exemplo de uso:
-setContainerBackground('img/backgroud_img.png');
 
 });
