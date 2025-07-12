@@ -48,7 +48,7 @@ setInterval(() => {
     imgs.forEach((img) => img.classList.remove('active'));
     textoIdx++;
     if (textoIdx >= textos.length) {
-        window.location.href = '/statics/pagina_confirmacao.html'; // Troque pelo endereço desejado
+        window.location.href = 'statics/pagina_confirmacao.html'; // Troque pelo endereço desejado
         return;
     }
     imgs[textoIdx].classList.add('active');
