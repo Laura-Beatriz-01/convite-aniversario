@@ -52,7 +52,7 @@ setInterval(() => {
         return;
     }
     imgs[textoIdx].classList.add('active');
-}, 6000); // Troca a cada 6 segundos
+}, 8000); // Troca a cada 6 segundos
 
 
 });
