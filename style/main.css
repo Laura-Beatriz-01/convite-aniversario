@@ -8,32 +8,34 @@
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     font-family: 'Poppins', 'Inter', 'Quicksand', Arial, sans-serif;
+    background: #18171700;
+    box-sizing: border-box;
 }
 
 .container {
+    position: relative;
     min-height: 100vh;
-    width: 100vw;
-    /*background-image: url(/img/1.png);  Imagem de fundo 
-    background-size: auto 100%;      
+    min-width: 100vw;
+    /* width: 100%; */ /* Removed for fixed width on larger screens */
+    height: 100%;
+    max-width: 480px;
+    max-height: 900px;
+    margin: auto;
+    box-sizing: border-box;
+    background-image: url('/img/backgroud_img.png');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;*/
+    justify-content: center;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.background-slideshow {
+/* .background-slideshow {
     position: fixed;
     top: 0; left: 0;
     width: 100vw;
@@ -54,12 +56,56 @@ h1 {
 
 .background-slideshow img.active {
     opacity: 1;
-}
+} */
 
 /* Otimização para celulares */
-@media (max-width: 600px) {
+
+/* Breakpoint: celulares menores */
+@media (max-width: 480px) {
     .container {
-        background-size: 100% 100%;  /* Preenche largura e altura em telas pequenas */
+        padding: 5% 5% 35% 5%; /* Adjusted padding for smaller screens */
+        font-size: 0.9rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Breakpoint: celulares maiores */
+@media (min-width: 481px) and (max-width: 900px) {
+    .container {
+        padding: 2rem;
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Breakpoint: computador */
+@media (min-width: 901px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .container {
+        padding: 3rem;
+        font-size: 1.1rem;
+        width: 480px; /* Fixed width for larger screens */
+        height: 900px;
+        max-width: 480px;
+        max-height: 900px;
+        margin: auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 2.5rem;
     }
 }
 
