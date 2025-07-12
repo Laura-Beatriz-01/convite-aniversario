@@ -49,4 +49,15 @@ setInterval(() => {
     textoIdx = (textoIdx + 1) % textos.length;
     imgs[textoIdx].classList.add('active');
 }, 6000); // Troca a cada 5 segundos
+
+function setContainerBackground(imgPath) {
+    const container = document.querySelector('.container');
+    if (container) {
+        container.style.backgroundImage = `url('${imgPath}')`;
+    }
+}
+
+// Exemplo de uso:
+setContainerBackground('img/backgroud_img.png');
+
 });
