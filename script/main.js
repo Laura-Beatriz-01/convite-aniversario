@@ -23,4 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
         idx = (idx + 1) % imagens.length;
         imgs[idx].classList.add('active');
     }, 3000); // Troca a cada 3 segundos
+
+    // Slide de prints de textos
+const textos = [
+    'img/texto/1.png',
+    'img/texto/2.png',
+    'img/texto/3.png',
+    'img/texto/4.png',
+    'img/texto/5.png',
+    'img/texto/6.png',
+    'img/texto/7.png'
+];
+const textoSlideshow = document.querySelector('.texto');
+textos.forEach((src, i) => {
+    const img = document.createElement('img');
+    img.src = src;
+    if (i === 0) img.classList.add('active');
+    textoSlideshow.appendChild(img);
+});
+
+let textoIdx = 0;
+setInterval(() => {
+    const imgs = textoSlideshow.querySelectorAll('img');
+    imgs.forEach((img) => img.classList.remove('active'));
+    textoIdx = (textoIdx + 1) % textos.length;
+    imgs[textoIdx].classList.add('active');
+}, 6000); // Troca a cada 5 segundos
 });
