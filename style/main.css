@@ -197,7 +197,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 0; /* espaço entre os atalhos */
+    gap: 1rem; /* espaço entre os atalhos */
     margin: 1rem;
 }
 
