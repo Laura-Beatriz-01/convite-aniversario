@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (iframe) {
                 iframe.contentWindow.postMessage(JSON.stringify({ method: 'play' }), '*');
             }
-            window.location.href = 'convite.html';
+            setTimeout(function() {
+                window.location.href = 'convite.html';
+            }, 500); // Aguarda 500ms antes de redirecionar
         });
     }
 
@@ -78,9 +80,9 @@ setInterval(() => {
         return;
     }
     imgs[textoIdx].classList.add('active');
-    if (textoIdx === 0) {
-        playVimeo(); // Toca o vídeo quando o primeiro texto aparece
-    }
+    // if (textoIdx === 0) {
+    //     playVimeo(); // Toca o vídeo quando o primeiro texto aparece
+    // }
 }, 8000); // Troca a cada 6 segundos
     
 });
