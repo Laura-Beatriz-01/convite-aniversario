@@ -330,7 +330,7 @@ html, body {
 }
 
 #modal-confirmacao .modal-content {
-    background: url('/convite-aniversario/img/modal/aviso.jpg') center center no-repeat;
+    background: url('convite-aniversario/img/modal/aviso.jpg') center center no-repeat;
     background-size: contain;
     border-radius: 16px;
     padding: 2rem;
