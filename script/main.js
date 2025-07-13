@@ -101,7 +101,7 @@ if (btnConfirmacao) {
         e.preventDefault();
         document.body.insertAdjacentHTML('beforeend', modalHtml);
         document.getElementById('btn-confirmar-modal').onclick = function() {
-            window.location.href = "https://w.app/lexjhm";
+            window.location.href = "https://w.app/9pyjth";
         };
     });
 }
