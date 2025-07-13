@@ -1,5 +1,20 @@
 // Slide de background com 7 imagens
 document.addEventListener('DOMContentLoaded', () => {
+
+      // Adiciona evento ao botão de abrir convite
+    const btnAbrirConvite = document.querySelector('.abrir-convite-btn');
+    if (btnAbrirConvite) {
+        btnAbrirConvite.addEventListener('click', function(e) {
+            e.preventDefault();
+            const iframe = document.getElementById('vimeo-audio');
+            if (iframe) {
+                iframe.contentWindow.postMessage(JSON.stringify({ method: 'play' }), '*');
+            }
+            window.location.href = 'convite.html';
+        });
+    }
+
+
     const imagens = [
         'img/borboletas/1.png',
         'img/borboletas/2.png',
