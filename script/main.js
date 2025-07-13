@@ -42,17 +42,52 @@ textos.forEach((src, i) => {
     textoSlideshow.appendChild(img);
 });
 
+// Função para tocar o vídeo do Vimeo
+function playVimeo() {
+    const iframe = document.querySelector('iframe[src*="vimeo.com"]');
+    if (iframe) {
+        // Envia comando de play via postMessage para o player do Vimeo
+        iframe.contentWindow.postMessage(JSON.stringify({
+            method: 'play'
+        }), '*');
+    }
+}
+
 let textoIdx = 0;
 setInterval(() => {
     const imgs = textoSlideshow.querySelectorAll('img');
     imgs.forEach((img) => img.classList.remove('active'));
     textoIdx++;
     if (textoIdx >= textos.length) {
-        window.location.href = '/convite-aniversario/pagina_confirmacao.html'; // Troque pelo endereço desejado
+        window.location.href = '/pagina_confirmacao.html'; // Troque pelo endereço desejado
         return;
     }
     imgs[textoIdx].classList.add('active');
+    if (textoIdx === 0) {
+        playVimeo(); // Toca o vídeo quando o primeiro texto aparece
+    }
 }, 8000); // Troca a cada 6 segundos
 
-
+    
 });
+
+const btnConfirmacao = document.querySelector('.atalho-confirmacao');
+if (btnConfirmacao) {
+    btnConfirmacao.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Insere a modal como filha do botão de confirmação
+        btnConfirmacao.insertAdjacentHTML('beforeend', modalHtml);
+        document.getElementById('btn-confirmar-modal').onclick = function() {
+            window.location.href = btnConfirmacao.href;
+        };
+    });
+}
+
+const modalHtml = `
+    <div id="modal-confirmacao">
+        <div class="modal-content">
+            <button id="btn-confirmar-modal">confirmar</button>
+        </div>
+    </div>
+`;
+

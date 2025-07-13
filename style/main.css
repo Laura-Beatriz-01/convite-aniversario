@@ -28,7 +28,7 @@
     --h1-size-tablet: 2rem;
     --h1-size-desktop: 2.5rem;
     --background-color: #18171700;
-    --background-image: url('/convite-aniversario/backgroud_img.png');
+    --background-image: url('/backgroud_img.png');
     --veryberry-color: #ec6583;
 }
 
@@ -312,6 +312,60 @@ html, body {
 .lista-presentes li:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 24px rgba(236, 101, 131, 0.18);
+}
+
+
+/* modal confirmação */
+
+#modal-confirmacao {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#modal-confirmacao .modal-content {
+    background: url('../img/modal/aviso.jpg') center center no-repeat;
+    background-size: contain;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 400px;
+    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#modal-confirmacao h2 {
+    font-size: 1rem;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+#btn-confirmar-modal {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--veryberry-color, #ec6583);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    align-self: center  ;
 }
 
 
