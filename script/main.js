@@ -67,21 +67,8 @@ setInterval(() => {
         playVimeo(); // Toca o vídeo quando o primeiro texto aparece
     }
 }, 8000); // Troca a cada 6 segundos
-
     
 });
-
-const btnConfirmacao = document.querySelector('.atalho-confirmacao');
-if (btnConfirmacao) {
-    btnConfirmacao.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Insere a modal como filha do botão de confirmação
-        btnConfirmacao.insertAdjacentHTML('beforeend', modalHtml);
-        document.getElementById('btn-confirmar-modal').onclick = function() {
-            window.location.href = btnConfirmacao.href;
-        };
-    });
-}
 
 const modalHtml = `
     <div id="modal-confirmacao">
@@ -90,4 +77,17 @@ const modalHtml = `
         </div>
     </div>
 `;
+
+const btnConfirmacao = document.querySelector('.atalho-confirmacao');
+if (btnConfirmacao) {
+    btnConfirmacao.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        document.getElementById('btn-confirmar-modal').onclick = function() {
+            window.location.href = "https://w.app/lexjhm";
+        };
+    });
+}
+
+
 
